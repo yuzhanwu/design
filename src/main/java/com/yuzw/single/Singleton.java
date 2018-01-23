@@ -9,7 +9,7 @@ package com.yuzw.single;
 public class Singleton {
     private static Singleton instance = null;
     private Singleton(){};
-    public Singleton getInstance(){
+    public static Singleton getInstance(){
         if(instance == null){
             instance = new Singleton();
         }

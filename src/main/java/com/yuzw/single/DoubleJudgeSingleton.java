@@ -9,7 +9,7 @@ package com.yuzw.single;
 public class DoubleJudgeSingleton {
     private static DoubleJudgeSingleton instance = null;
     private DoubleJudgeSingleton(){};
-    public DoubleJudgeSingleton getInstance(){
+    public static DoubleJudgeSingleton getInstance(){
         if(instance == null){
             synchronized (DoubleJudgeSingleton.class){
                 if(instance == null) {

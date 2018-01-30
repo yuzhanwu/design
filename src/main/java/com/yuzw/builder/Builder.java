@@ -6,6 +6,9 @@ package com.yuzw.builder;
  * Created on 2018/1/30.
  */
 public abstract class Builder {
+//    public  abstract void buildPartA();
+//    public  abstract void buildPartB();
+//    public  abstract void buildPartC();
     public abstract void setPart(String arg1, String arg2);
     public abstract SchoolUser getSchoolUser();
 }

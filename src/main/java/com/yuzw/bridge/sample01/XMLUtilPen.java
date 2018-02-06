@@ -1,8 +1,9 @@
 package com.yuzw.bridge.sample01;
 
 import javax.xml.parsers.*;
-import org.w3c.dom.*;
 
+import org.springframework.util.ResourceUtils;
+import org.w3c.dom.*;
 import java.io.*;
 public class XMLUtilPen
 {
@@ -12,8 +13,9 @@ public class XMLUtilPen
 		{
 			DocumentBuilderFactory dFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = dFactory.newDocumentBuilder();
-			Document doc;							
-			doc = builder.parse(new File("com/yuzw/bridge/sample01/configPen.xml"));
+			Document doc;
+			String dbfile = ResourceUtils.getFile("classpath:pen.xml").getPath();
+			doc = builder.parse(new File(dbfile));
 			NodeList nl=null;
 			Node classNode=null;
 			String cName=null;
@@ -30,7 +32,7 @@ public class XMLUtilPen
 			}
 			
 	         cName=classNode.getNodeValue();
-	         Class c=Class.forName(cName);
+	         Class c = Class.forName("com.yuzw.bridge.sample01."+cName);
 		  	 Object obj=c.newInstance();
 	         return obj;		
            }   
